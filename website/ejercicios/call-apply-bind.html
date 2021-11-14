@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>
+      Function.prototype.call, Function.prototype.apply, Function.prototype.bind
+    </title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <ul>
+      <li><button class="call-to-action">Aprender</button></li>
+      <li><button class="call-to-action">Aprender Más</button></li>
+      <li><button class="call-to-action">¡Nunca parar de Aprender!</button></li>
+    </ul>
+
+    <script>
+      // Establece `this` usando `call`
+      function saludar() {
+        console.log(`Hola. Soy ${this.name} ${this.apellido}`);
+
+      }
+
+      const edwar = {
+        name: "Edwar",
+        apellido: "Aguiar",
+      }
+
+      saludar.call(edwar);
+
+      // Establece `this` usando `call` y pasar argumentos a la función
+      function caminar (metros, direccion) {
+        console.log(`${this.name} camina ${metros} metros hacia el ${direccion}.`)
+      }
+
+      caminar.call(edwar, 400, 'norte');
+
+      // Establece `this` usando `apply` y pasar argumentos a la función
+
+      caminar.apply(edwar, [800, "norteste"]);
+
+      // Otra forma de pasar los valores
+
+      const valores = [1500, "sur"];
+      caminar.apply(edwar, valores);
+
+      // Establecer `this` en una nueva función usando `bind`
+
+      //const carlos = { name: "Carlos", apellido: "Aguiar" }
+      //saludar.bind(carlos);
+      // No aparece nada en la consola. Todavia no esta en escena
+      const carlos = { name: "Carlos Manuel", apellido: "Aguiar" }
+      const carlossaluda = saludar.bind(carlos);
+      carlossaluda();
+
+      const carloscamina = caminar.bind(carlos, 2000, "sureste");
+      carloscamina();
+
+      // Cuándo es útil usar uno de estos métodos
+
+      //NodeList
+      //Dandole funcionalidad a los Botones
+      const buttons = document.getElementsByClassName('call-to-action');
+
+      Array.prototype.forEach.call(buttons, button => {
+        button.onclick = () => alert('Nunca pares de aprender!');
+      });
+
+      
+
+
+    </script>
+  </body>
+</html>
