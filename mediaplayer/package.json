@@ -1,0 +1,16 @@
+{
+  "name": "@edwaraguiar/platzimediaplayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/mediaplayer.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Edwar Aguiar",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}

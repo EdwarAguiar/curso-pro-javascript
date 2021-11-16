@@ -1,8 +1,8 @@
 
-import MediaPlayer from './mediaplayer';
-import AutoPlay from './plugins/Autoplay';
-import AutoPause from './plugins/AutoPause';
-import Ads from './plugins/Ads';
+import MediaPlayer from '@edwaraguiar/platzimediaplayer';
+import AutoPlay from '@edwaraguiar/platzimediaplayer/lib/plugins/Autoplay';
+import AutoPause from '@edwaraguiar/platzimediaplayer/lib/plugins/AutoPause';
+import Ads from '@edwaraguiar/platzimediaplayer/lib/plugins/Ads';
 
 const video = document.querySelector('video');
 const player = new MediaPlayer({

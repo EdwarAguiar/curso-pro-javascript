@@ -18,6 +18,7 @@
     "last 1 chrome version"
   ],
   "dependencies": {
+    "@edwaraguiar/platzimediaplayer": "^1.0.0",
     "fast-levenshtein": "^3.0.0"
   }
 }
